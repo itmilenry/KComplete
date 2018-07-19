@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+
+        <include layout="@layout/activity_header" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pick_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/pick_date" />
+
+            <Button
+                android:id="@+id/pick_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/pick_time" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_euroPerLitre"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/form_padding"
+            android:hint="@string/edit_euroPerLitre"
+            android:padding="@dimen/form_padding"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/edit_totKm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/form_padding"
+            android:gravity="center_vertical"
+            android:hint="@string/edit_totKm"
+            android:inputType="number"
+            android:padding="@dimen/form_padding" />
+
+
+
+
+        <EditText
+            android:id="@+id/edit_cost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/form_padding"
+            android:gravity="center_vertical"
+            android:hint="@string/edit_totCost"
+            android:inputType="number"
+            android:padding="@dimen/form_padding" />
+
+
+        <EditText
+            android:id="@+id/edit_litres"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/form_padding"
+            android:gravity="center_vertical"
+            android:hint="@string/edit_litres"
+            android:inputType="number"
+            android:padding="@dimen/form_padding" />
+
+        <EditText
+            android:id="@+id/edit_position"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/form_padding"
+            android:ems="10"
+            android:hint="@string/edit_position"
+            android:inputType="textMultiLine" />
+
+        <EditText
+            android:id="@+id/edit_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/form_padding"
+            android:ems="10"
+            android:layout_gravity=""
+            android:hint="@string/edit_note"
+            android:inputType="textMultiLine" />
+
+
+    </LinearLayout>
+</ScrollView>

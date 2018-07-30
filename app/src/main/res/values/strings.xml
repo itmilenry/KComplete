@@ -27,4 +27,5 @@
     <string name="last90Days">Last 90 days</string>
     <string name="manageCars">Your cars</string>
     <string name="choose_a_type">Choose a type</string>
+    <string name="fuel_registration_title">Fuel Registration</string>
 </resources>

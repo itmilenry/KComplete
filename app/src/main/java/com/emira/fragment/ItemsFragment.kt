@@ -1,5 +1,7 @@
 package com.emira.fragment
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
@@ -9,9 +11,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.BounceInterpolator
 import com.emira.kcomplete.FuelRegistrationActivity
 import com.emira.kcomplete.R
-import com.emira.kcomplete.RegistrationActivity
 import com.emira.model.MODE
 import java.text.SimpleDateFormat
 import java.util.*
@@ -37,9 +40,12 @@ class ItemsFragment: BaseFragment() {
 
         btn?.setOnClickListener{
 
+            animate(btn)
             val items = arrayOf( getString(R.string.fuel_registration_activity_title))
             val builder = AlertDialog.Builder(this@ItemsFragment.context)
                     .setTitle(R.string.choose_a_type)
+                    .setCancelable(true)
+                    .setOnCancelListener{animate(btn,false)}
                     .setItems(items) { _, which ->
                         when (which) {
                             0 -> {
@@ -91,4 +97,21 @@ class ItemsFragment: BaseFragment() {
     }
 
 
+    private fun animate(btn: FloatingActionButton, expand: Boolean = true) {
+        val animation1 = ObjectAnimator.ofFloat(btn, "scaleX", if(expand){ 1.5f } else { 1.0f })
+        animation1.duration = 2000
+        animation1.interpolator = BounceInterpolator()
+
+        val animation2 = ObjectAnimator.ofFloat(btn, "scaleY", if(expand){ 1.5f } else { 1.0f })
+        animation2.duration = 2000
+        animation2.interpolator = BounceInterpolator()
+
+        val animation3 = ObjectAnimator.ofFloat(btn, "alpha", if(expand){ 0.3f } else { 1.0f })
+        animation3.duration = 500
+        animation3.interpolator = AccelerateInterpolator()
+
+        val set = AnimatorSet()
+        set.play(animation1).with(animation2).before(animation3)
+        set.start()
+    }
 }

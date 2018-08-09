@@ -22,6 +22,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="@dimen/button_margin"
+        android:scaleType="centerInside"
+        android:src="@android:drawable/ic_input_add"
         app:backgroundTint="@color/colorPrimary" />
 
 </RelativeLayout>

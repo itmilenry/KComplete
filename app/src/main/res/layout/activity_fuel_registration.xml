@@ -2,12 +2,18 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/black_transparent_40">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        >
+        android:background="@color/black_transparent_40">
 
 
         <android.support.v7.widget.Toolbar
@@ -17,24 +23,25 @@
             android:background="@color/colorPrimary"
             android:elevation="@dimen/toolbar_elevation" />
 
+        <EditText
+            android:id="@+id/fuel_registration_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/fuel_registration_title"
+            android:padding="@dimen/form_padding"
+            style="@style/edit_text_transparent"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/fuel_registration_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/fuel_registration_title"
-                android:padding="@dimen/form_padding"
-                style="@style/edit_text_transparent"
-                />
-
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:background="@color/grey_text_light">
 
             <Button
                 android:id="@+id/pick_date"
-                android:layout_width="0dp"
+                android:layout_width="100pt"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:text="@string/pick_date"
@@ -49,6 +56,7 @@
                 style="@style/simple_button_green" />
 
         </LinearLayout>
+    </LinearLayout>
 
         <EditText
             android:id="@+id/edit_euroPerLitre"
